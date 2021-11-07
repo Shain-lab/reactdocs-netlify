@@ -7,7 +7,7 @@ import SocialCard from './SocialCard';
 function App() {
 
   const [users ,setUsers]=useState([]);
-  const [allusers ,setAllUsers]=useState([]);
+  
 
   
   useEffect(()=>{
@@ -20,18 +20,18 @@ function App() {
         console.log(err);
         userData = [];
       }
-      setAllUsers(userData);
+     
       setUsers(userData);
     })();
   }, []);
 
-  const filterCards = event => {
-    const value = event.target.value.toLowerCase();
-    const filterUsers = allusers.filter(
-      user => (`${user.name.first} ${user.name.last}`.toLowerCase().includes(value))
-    );
-      setUsers(filterUsers);
-  };
+  // const filterCards = event => {
+  //   const value = event.target.value.toLowerCase();
+  //   const filterUsers = allusers.filter(
+  //     user => (`${user.name.first} ${user.name.last}`.toLowerCase().includes(value))
+  //   );
+  //     setUsers(filterUsers);
+  // };
 
   return (
     <div className="App">
