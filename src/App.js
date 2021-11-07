@@ -14,8 +14,8 @@ function App() {
     (async()=>{
       let userData;
       try{
-        const response = await fetch('http://localhost:3001/doctors/list');
-        userData = (await response.json()).results;
+        const response = await fetch('https://nodedummyapicall.herokuapp.com/dummy');
+        userData = (await response.json());
       }catch(err){
         console.log(err);
         userData = [];
